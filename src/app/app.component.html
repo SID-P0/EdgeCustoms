@@ -1,0 +1,75 @@
+<header class="header">
+  <div class="header-content">
+    <div class="logo-container">
+      <img src="logo.png" alt="Edge Customs Logo" class="logo" />
+      <span class="brand-name">Edge Customs</span>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" [class.open]="isMobileMenuOpen">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item has-submenu" [class.expanded]="isServicesExpanded">
+          <button class="nav-link services-toggle" (click)="toggleServices($event)">
+            Services
+            <span class="toggle-icon" [class.rotated]="isServicesExpanded">+</span>
+          </button>
+          <ul class="submenu" [class.show]="isServicesExpanded">
+            <li class="submenu-item has-nested" [class.expanded]="expandedService === 'serviceA'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('serviceA', $event)">
+                Service A
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceA'">+</span>
+              </button>
+              <ul class="nested-submenu" [class.show]="expandedService === 'serviceA'">
+                <li><a href="#service-a1" class="nested-link">Subservice A1</a></li>
+                <li><a href="#service-a2" class="nested-link">Subservice A2</a></li>
+                <li><a href="#service-a3" class="nested-link">Subservice A3</a></li>
+              </ul>
+            </li>
+            <li class="submenu-item has-nested" [class.expanded]="expandedService === 'serviceB'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('serviceB', $event)">
+                Service B
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceB'">+</span>
+              </button>
+              <ul class="nested-submenu" [class.show]="expandedService === 'serviceB'">
+                <li><a href="#service-b1" class="nested-link">Subservice B1</a></li>
+                <li><a href="#service-b2" class="nested-link">Subservice B2</a></li>
+                <li><a href="#service-b3" class="nested-link">Subservice B3</a></li>
+              </ul>
+            </li>
+            <li class="submenu-item has-nested" [class.expanded]="expandedService === 'serviceC'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('serviceC', $event)">
+                Service C
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceC'">+</span>
+              </button>
+              <ul class="nested-submenu" [class.show]="expandedService === 'serviceC'">
+                <li><a href="#service-c1" class="nested-link">Subservice C1</a></li>
+                <li><a href="#service-c2" class="nested-link">Subservice C2</a></li>
+                <li><a href="#service-c3" class="nested-link">Subservice C3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link contact-btn">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <router-outlet />
+</main>

@@ -1,0 +1,25 @@
+/* Edge Customs - Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-green: #ADFF2F;
+  --bg-black: #0a0a0a;
+  --text-white: #ffffff;
+  --text-gray: #a0a0a0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
