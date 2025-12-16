@@ -16,7 +16,7 @@
     <nav class="nav-menu" [class.open]="isMobileMenuOpen">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="#home" class="nav-link">Home</a>
+          <a routerLink="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
           <a href="#about" class="nav-link">About Us</a>
@@ -94,85 +94,6 @@
 </header>
 
 <main class="main-content">
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-tagline">
-          @for (tagline of heroSlides[currentSlideIndex].taglines; track tagline.text) {
-            <span [class]="tagline.color === 'green' ? 'tagline-green' : 'tagline-white'">{{ tagline.text }}</span>
-          }
-        </h1>
-      </div>
-      <div class="hero-image-container">
-        <img [src]="heroSlides[currentSlideIndex].image" alt="Edge Customs Service" class="hero-image" />
-        <div class="decorative-star">✦</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mechanic Info Box Section -->
-  <section class="mechanic-info-section">
-    <div class="mechanic-info-box">
-      <div class="mechanic-media-container">
-        <video autoplay muted loop playsinline class="mechanic-video">
-          <source src="/assets/mechanic-desktop-compressed.mp4" type="video/mp4">
-        </video>
-        <div class="media-overlay"></div>
-      </div>
-      <div class="mechanic-content">
-        <h2 class="mechanic-title">Edge Customs — Driven By Detail</h2>
-        <p class="mechanic-description">
-          Your vehicle is more than a machine — it's a statement. Edge Customs is a premium detailing studio 
-          dedicated to paint protection, advanced coatings, and bespoke customization. We pair certified expertise 
-          with cutting-edge materials to deliver finishes that don't just protect — they transform.
-        </p>
-
-        <div class="trust-section">
-          <h3 class="section-title">Built on Trust</h3>
-          <p class="section-text">
-            Trust isn't just a value — it's the foundation of everything we do. We believe in transparent processes, 
-            honest recommendations, and empowering our clients with the knowledge to understand exactly what their 
-            vehicle needs and why.
-          </p>
-          <p class="section-text">
-            Our growing community of loyal clients speaks to our dedication: we're here for lasting relationships 
-            and exceptional results, not shortcuts. When you choose Edge Customs, you choose a partner invested 
-            in your vehicle's future.
-          </p>
-        </div>
-
-        <div class="services-section">
-          <h3 class="section-title">Our Expertise</h3>
-          <p class="section-text">
-            From Paint Protection Film and Ceramic & Graphene Coatings to Interior Restoration and Custom Wraps — 
-            every service we offer is guided by one principle: <span class="highlight">perfection through precision</span>.
-          </p>
-          <p class="section-text">
-            Whether you drive a daily commuter, a luxury sedan, or a high-performance machine, your vehicle 
-            receives the same uncompromising attention. Every car leaves our studio fully protected, visually 
-            elevated, and transformed to exceed your expectations.
-          </p>
-        </div>
-        
-        <div class="promise-section">
-          <h3 class="promise-title">Our Promise</h3>
-          <p class="promise-intro">When you choose Edge Customs, you choose:</p>
-          <ul class="promise-list">
-            <li>Unmatched craftsmanship</li>
-            <li>Premium protection solutions</li>
-            <li>Attention to every detail</li>
-            <li>A studio that respects your car as much as you do</li>
-          </ul>
-          <button class="cta-button" (click)="openServicesMenu()">
-            Check Our Services Out
-            <span class="cta-arrow">→</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-  
   <router-outlet />
 
   <!-- Footer Section -->

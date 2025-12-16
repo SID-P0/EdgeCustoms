@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 interface HeroSlide {
   image: string;
@@ -8,7 +8,7 @@ interface HeroSlide {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,6 +17,9 @@ export class AppComponent implements OnInit, OnDestroy {
   isMobileMenuOpen = false;
   isServicesExpanded = false;
   expandedService: string | null = null;
+  
+  // Services page
+  selectedService: string | null = null;
 
   // Hero carousel
   heroSlides: HeroSlide[] = [
@@ -126,5 +129,9 @@ export class AppComponent implements OnInit, OnDestroy {
         this.isMobileMenuOpen = true;
       }
     }, 500);
+  }
+
+  selectService(service: string): void {
+    this.selectedService = this.selectedService === service ? null : service;
   }
 }

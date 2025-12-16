@@ -1,0 +1,179 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-tagline">
+        @for (tagline of heroSlides[currentSlideIndex].taglines; track tagline.text) {
+          <span [class]="tagline.color === 'green' ? 'tagline-green' : 'tagline-white'">{{ tagline.text }}</span>
+        }
+      </h1>
+    </div>
+    <div class="hero-image-container">
+      <img [src]="heroSlides[currentSlideIndex].image" alt="Edge Customs Service" class="hero-image" />
+      <div class="decorative-star">✦</div>
+    </div>
+  </div>
+</section>
+
+<!-- Mechanic Info Box Section -->
+<section class="mechanic-info-section">
+  <div class="mechanic-info-box">
+    <div class="mechanic-media-container">
+      <video autoplay muted loop playsinline class="mechanic-video">
+        <source src="/assets/mechanic-desktop-compressed.mp4" type="video/mp4">
+      </video>
+      <img src="mechanic-hero.png" class="mechanic-image fallback" alt="Mechanic at work">
+      <div class="media-overlay"></div>
+    </div>
+    <div class="mechanic-content">
+      <h2 class="mechanic-title">Edge Customs — Driven By Detail</h2>
+      <p class="mechanic-description">
+        Your vehicle is more than a machine — it's a statement. Edge Customs is a premium detailing studio 
+        dedicated to paint protection, advanced coatings, and bespoke customization. We pair certified expertise 
+        with cutting-edge materials to deliver finishes that don't just protect — they transform.
+      </p>
+
+      <div class="trust-section">
+        <h3 class="section-title">Built on Trust</h3>
+        <p class="section-text">
+          Trust isn't just a value — it's the foundation of everything we do. We believe in transparent processes, 
+          honest recommendations, and empowering our clients with the knowledge to understand exactly what their 
+          vehicle needs and why.
+        </p>
+        <p class="section-text">
+          Our growing community of loyal clients speaks to our dedication: we're here for lasting relationships 
+          and exceptional results, not shortcuts. When you choose Edge Customs, you choose a partner invested 
+          in your vehicle's future.
+        </p>
+      </div>
+
+      <div class="services-section">
+        <h3 class="section-title">Our Expertise</h3>
+        <p class="section-text">
+          From Paint Protection Film and Ceramic &amp; Graphene Coatings to Interior Restoration and Custom Wraps — 
+          every service we offer is guided by one principle: <span class="highlight">perfection through precision</span>.
+        </p>
+        <p class="section-text">
+          Whether you drive a daily commuter, a luxury sedan, or a high-performance machine, your vehicle 
+          receives the same uncompromising attention. Every car leaves our studio fully protected, visually 
+          elevated, and transformed to exceed your expectations.
+        </p>
+      </div>
+      
+      <div class="promise-section">
+        <h3 class="promise-title">Our Promise</h3>
+        <p class="promise-intro">When you choose Edge Customs, you choose:</p>
+        <ul class="promise-list">
+          <li>Unmatched craftsmanship</li>
+          <li>Premium protection solutions</li>
+          <li>Attention to every detail</li>
+          <li>A studio that respects your car as much as you do</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Page Section -->
+<section id="services" class="services-page-section">
+  <div class="services-page-container">
+    <div class="services-header">
+      <span class="services-label">What We Do</span>
+      <h2 class="services-main-title">Our Premium Services</h2>
+      <p class="services-subtitle">Expert craftsmanship meets cutting-edge technology</p>
+    </div>
+
+    <div class="services-buttons-grid">
+      <!-- Paint Protection Film -->
+      <a 
+        class="service-card" 
+        routerLink="/services/ppf"
+      >
+        <div class="service-card-glow"></div>
+        <div class="service-icon-container">
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4L58 18V46L32 60L6 46V18L32 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M32 4V60" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <path d="M6 18L58 46" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <path d="M58 18L6 46" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="service-card-title">Paint Protection Film</h3>
+        <p class="service-card-desc">Shield your vehicle with invisible armor. Premium PPF technology that protects against scratches, chips, and environmental damage.</p>
+        <div class="service-card-features">
+          <span class="feature-tag">Self-Healing</span>
+          <span class="feature-tag">10yr Warranty</span>
+        </div>
+        <span class="explore-link">
+          Explore PPF <span class="arrow">→</span>
+        </span>
+      </a>
+
+      <!-- Car Wrapping -->
+      <a 
+        class="service-card featured" 
+        routerLink="/services/wrapping"
+      >
+        <div class="service-card-glow"></div>
+        <div class="featured-badge">Popular</div>
+        <div class="service-icon-container">
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="20" width="48" height="28" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M8 28H56" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <path d="M8 36H56" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="18" cy="48" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="46" cy="48" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M14 20L22 8H42L50 20" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="service-card-title">Car Wrapping</h3>
+        <p class="service-card-desc">Transform your vehicle's appearance with premium vinyl wraps. From subtle color changes to bold custom designs.</p>
+        <div class="service-card-features">
+          <span class="feature-tag">1000+ Colors</span>
+          <span class="feature-tag">Removable</span>
+        </div>
+        <span class="explore-link">
+          Explore Wraps <span class="arrow">→</span>
+        </span>
+      </a>
+
+      <!-- Full Car Detailing -->
+      <a 
+        class="service-card" 
+        routerLink="/services/detailing"
+      >
+        <div class="service-card-glow"></div>
+        <div class="service-icon-container">
+          <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="32" cy="32" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.5" fill="none"/>
+            <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.5" fill="none"/>
+            <path d="M32 6V14" stroke="currentColor" stroke-width="2"/>
+            <path d="M32 50V58" stroke="currentColor" stroke-width="2"/>
+            <path d="M6 32H14" stroke="currentColor" stroke-width="2"/>
+            <path d="M50 32H58" stroke="currentColor" stroke-width="2"/>
+            <circle cx="32" cy="32" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="service-card-title">Full Car Detailing</h3>
+        <p class="service-card-desc">Complete interior and exterior restoration. Ceramic coatings, paint correction, and meticulous attention to every detail.</p>
+        <div class="service-card-features">
+          <span class="feature-tag">Ceramic Pro</span>
+          <span class="feature-tag">Complete Care</span>
+        </div>
+        <span class="explore-link">
+          Explore Detailing <span class="arrow">→</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Full Services CTA -->
+    <div class="full-services-cta">
+      <button class="cta-button large" (click)="openServicesMenu()">
+        View Our Full List of Services
+        <span class="cta-arrow">→</span>
+      </button>
+    </div>
+  </div>
+</section>
