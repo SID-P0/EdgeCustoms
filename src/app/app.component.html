@@ -27,38 +27,61 @@
             <span class="toggle-icon" [class.rotated]="isServicesExpanded">+</span>
           </button>
           <ul class="submenu" [class.show]="isServicesExpanded">
-            <li class="submenu-item has-nested" [class.expanded]="expandedService === 'serviceA'">
+            <li class="submenu-item" [class.expanded]="expandedService === 'serviceA'">
               <button class="submenu-link" (click)="toggleServiceSubmenu('serviceA', $event)">
-                Service A
+                Paint Protection Film (PPF)
                 <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceA'">+</span>
               </button>
-              <ul class="nested-submenu" [class.show]="expandedService === 'serviceA'">
-                <li><a href="#service-a1" class="nested-link">Subservice A1</a></li>
-                <li><a href="#service-a2" class="nested-link">Subservice A2</a></li>
-                <li><a href="#service-a3" class="nested-link">Subservice A3</a></li>
-              </ul>
+              <!-- Desktop only: inline subservices -->
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'serviceA'">
+                <a href="#service-a1" class="nested-link">Ceramic Coating</a>
+                <a href="#service-a2" class="nested-link">Graphene Coating</a>
+              </div>
             </li>
-            <li class="submenu-item has-nested" [class.expanded]="expandedService === 'serviceB'">
+            <li class="submenu-item" [class.expanded]="expandedService === 'serviceB'">
               <button class="submenu-link" (click)="toggleServiceSubmenu('serviceB', $event)">
-                Service B
+                Car Wrapping
                 <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceB'">+</span>
               </button>
-              <ul class="nested-submenu" [class.show]="expandedService === 'serviceB'">
-                <li><a href="#service-b1" class="nested-link">Subservice B1</a></li>
-                <li><a href="#service-b2" class="nested-link">Subservice B2</a></li>
-                <li><a href="#service-b3" class="nested-link">Subservice B3</a></li>
-              </ul>
+              <!-- Desktop only: inline subservices -->
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'serviceB'">
+                <a href="#service-b1" class="nested-link">Vinyl</a>
+                <a href="#service-b2" class="nested-link">TPH(Thermoplastic Polyolefin)</a>
+                <a href="#service-b3" class="nested-link">TPU(Thermoplastic Polyurethane)</a>
+              </div>
             </li>
-            <li class="submenu-item has-nested" [class.expanded]="expandedService === 'serviceC'">
+            <li class="submenu-item" [class.expanded]="expandedService === 'serviceC'">
               <button class="submenu-link" (click)="toggleServiceSubmenu('serviceC', $event)">
-                Service C
+                Full Car Detailing
                 <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceC'">+</span>
               </button>
-              <ul class="nested-submenu" [class.show]="expandedService === 'serviceC'">
-                <li><a href="#service-c1" class="nested-link">Subservice C1</a></li>
-                <li><a href="#service-c2" class="nested-link">Subservice C2</a></li>
-                <li><a href="#service-c3" class="nested-link">Subservice C3</a></li>
-              </ul>
+              <!-- Desktop only: inline subservices -->
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'serviceC'">
+                <a href="#service-c1" class="nested-link">Interior Detailing</a>
+                <a href="#service-c2" class="nested-link">Engine Bay Detailing</a>
+                <a href="#service-c3" class="nested-link">Headlight Restoration</a>
+                <a href="#service-c4" class="nested-link">Wheel & Caliper Coating</a>
+                <a href="#service-c5" class="nested-link">Headlight Restoration</a>
+              </div>
+            </li>
+            <!-- Mobile only: shared subservices container at bottom -->
+            <li class="mobile-subservices-container" [class.show]="expandedService">
+              @if (expandedService === 'serviceA') {
+                <a href="#service-a1" class="nested-link">Ceramic Coating</a>
+                <a href="#service-a2" class="nested-link">Graphene Coating</a>
+              }
+              @if (expandedService === 'serviceB') {
+                <a href="#service-b1" class="nested-link">Vinyl</a>
+                <a href="#service-b2" class="nested-link">TPH(Thermoplastic Polyolefin)</a>
+                <a href="#service-b3" class="nested-link">TPU(Thermoplastic Polyurethane)</a>
+              }
+              @if (expandedService === 'serviceC') {
+                <a href="#service-c1" class="nested-link">Interior Detailing</a>
+                <a href="#service-c2" class="nested-link">Engine Bay Detailing</a>
+                <a href="#service-c3" class="nested-link">Headlight Restoration</a>
+                <a href="#service-c4" class="nested-link">Wheel & Caliper Coating</a>
+                <a href="#service-c5" class="nested-link">Headlight Restoration</a>
+              }
             </li>
           </ul>
         </li>
@@ -71,5 +94,22 @@
 </header>
 
 <main class="main-content">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-tagline">
+          <span class="tagline-green">BUILD.</span>
+          <span class="tagline-white">DRIVE.</span>
+          <span class="tagline-green">REPEAT.</span>
+        </h1>
+      </div>
+      <div class="hero-image-container">
+        <img src="mechanic-hero.png" alt="Professional mechanic working on car engine" class="hero-image" />
+        <div class="decorative-star">✦</div>
+      </div>
+    </div>
+  </section>
+  
   <router-outlet />
 </main>
