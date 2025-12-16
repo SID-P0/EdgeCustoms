@@ -99,17 +99,133 @@
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="hero-tagline">
-          <span class="tagline-green">BUILD.</span>
-          <span class="tagline-white">DRIVE.</span>
-          <span class="tagline-green">REPEAT.</span>
+          @for (tagline of heroSlides[currentSlideIndex].taglines; track tagline.text) {
+            <span [class]="tagline.color === 'green' ? 'tagline-green' : 'tagline-white'">{{ tagline.text }}</span>
+          }
         </h1>
       </div>
       <div class="hero-image-container">
-        <img src="mechanic-hero.png" alt="Professional mechanic working on car engine" class="hero-image" />
+        <img [src]="heroSlides[currentSlideIndex].image" alt="Edge Customs Service" class="hero-image" />
         <div class="decorative-star">✦</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mechanic Info Box Section -->
+  <section class="mechanic-info-section">
+    <div class="mechanic-info-box">
+      <div class="mechanic-media-container">
+        <video autoplay muted loop playsinline class="mechanic-video">
+          <source src="assets/mechanic-desktop-compressed.mp4" type="video/mp4">
+        </video>
+        <div class="media-overlay"></div>
+      </div>
+      <div class="mechanic-content">
+        <h2 class="mechanic-title">Edge Customs — Driven By Detail</h2>
+        <p class="mechanic-description">
+          Your vehicle is more than a machine — it's a statement. Edge Customs is a premium detailing studio 
+          dedicated to paint protection, advanced coatings, and bespoke customization. We pair certified expertise 
+          with cutting-edge materials to deliver finishes that don't just protect — they transform.
+        </p>
+
+        <div class="trust-section">
+          <h3 class="section-title">Built on Trust</h3>
+          <p class="section-text">
+            Trust isn't just a value — it's the foundation of everything we do. We believe in transparent processes, 
+            honest recommendations, and empowering our clients with the knowledge to understand exactly what their 
+            vehicle needs and why.
+          </p>
+          <p class="section-text">
+            Our growing community of loyal clients speaks to our dedication: we're here for lasting relationships 
+            and exceptional results, not shortcuts. When you choose Edge Customs, you choose a partner invested 
+            in your vehicle's future.
+          </p>
+        </div>
+
+        <div class="services-section">
+          <h3 class="section-title">Our Expertise</h3>
+          <p class="section-text">
+            From Paint Protection Film and Ceramic & Graphene Coatings to Interior Restoration and Custom Wraps — 
+            every service we offer is guided by one principle: <span class="highlight">perfection through precision</span>.
+          </p>
+          <p class="section-text">
+            Whether you drive a daily commuter, a luxury sedan, or a high-performance machine, your vehicle 
+            receives the same uncompromising attention. Every car leaves our studio fully protected, visually 
+            elevated, and transformed to exceed your expectations.
+          </p>
+        </div>
+        
+        <div class="promise-section">
+          <h3 class="promise-title">Our Promise</h3>
+          <p class="promise-intro">When you choose Edge Customs, you choose:</p>
+          <ul class="promise-list">
+            <li>Unmatched craftsmanship</li>
+            <li>Premium protection solutions</li>
+            <li>Attention to every detail</li>
+            <li>A studio that respects your car as much as you do</li>
+          </ul>
+          <button class="cta-button" (click)="openServicesMenu()">
+            Check Our Services Out
+            <span class="cta-arrow">→</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
   
   <router-outlet />
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-map">
+        <h3 class="footer-title">Find Us</h3>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0!2d72.8!3d19.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA2JzAwLjAiTiA3MsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%" 
+            height="250" 
+            style="border:0; border-radius: 12px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+      
+      <div class="footer-contact">
+        <h3 class="footer-title">Get In Touch</h3>
+        <div class="contact-info">
+          <a href="tel:+919876543210" class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span class="contact-text">+91 98765 43210</span>
+          </a>
+          <a href="mailto:info@edgecustoms.in" class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-text">info&#64;edgecustoms.in</span>
+          </a>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span class="contact-text">Mumbai, Maharashtra, India</span>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Edge Customs. All rights reserved.</p>
+      <p class="license">Premium Car Detailing & Protection Studio | Licensed & Insured</p>
+    </div>
+  </footer>
 </main>

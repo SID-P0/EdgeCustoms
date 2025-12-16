@@ -26,3 +26,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Large video files
+public/assets/mechanic-desktop.mp4
+public/assets/mechanic-work.mp4
+
+# OS files
+.DS_Store
+*/.DS_Store
