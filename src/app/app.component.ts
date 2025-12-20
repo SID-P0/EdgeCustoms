@@ -1,11 +1,7 @@
-import { Component, OnInit, OnDestroy, inject, HostListener } from '@angular/core';
+import { Component, OnInit, inject, HostListener } from '@angular/core';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { UiService } from './services/ui.service';
 
-interface HeroSlide {
-  image: string;
-  taglines: { text: string; color: 'green' | 'white' }[];
-}
 
 @Component({
   selector: 'app-root',
@@ -13,7 +9,7 @@ interface HeroSlide {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   title = 'EdgeCustoms';
   isMobileMenuOpen = false;
   isServicesExpanded = false;
@@ -22,43 +18,6 @@ export class AppComponent implements OnInit, OnDestroy {
   // Services page
   selectedService: string | null = null;
 
-  // Hero carousel
-  heroSlides: HeroSlide[] = [
-    {
-      image: 'mechanic-hero.png',
-      taglines: [
-        { text: 'BUILD.', color: 'green' },
-        { text: 'DRIVE.', color: 'white' },
-        { text: 'REPEAT.', color: 'green' }
-      ]
-    },
-    {
-      image: 'carousel-ppf.png',
-      taglines: [
-        { text: 'PROTECT.', color: 'green' },
-        { text: 'PRESERVE.', color: 'white' },
-        { text: 'PERFECT.', color: 'green' }
-      ]
-    },
-    {
-      image: 'carousel-vinyl.png',
-      taglines: [
-        { text: 'WRAP.', color: 'green' },
-        { text: 'TRANSFORM.', color: 'white' },
-        { text: 'STAND OUT.', color: 'green' }
-      ]
-    },
-    {
-      image: 'carousel-detailing.png',
-      taglines: [
-        { text: 'DETAIL.', color: 'green' },
-        { text: 'SHINE.', color: 'white' },
-        { text: 'IMPRESS.', color: 'green' }
-      ]
-    }
-  ];
-  currentSlideIndex = 0;
-  private slideInterval: any;
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
@@ -87,8 +46,6 @@ export class AppComponent implements OnInit, OnDestroy {
   private uiService = inject(UiService);
 
   ngOnInit(): void {
-    this.startSlideshow();
-
     // Listen to UI Service events
     this.uiService.openServices$.subscribe(() => {
         this.openServicesMenu();
@@ -129,37 +86,6 @@ export class AppComponent implements OnInit, OnDestroy {
         behavior: 'smooth'
       });
     }
-  }
-
-  ngOnDestroy(): void {
-    this.stopSlideshow();
-  }
-
-  startSlideshow(): void {
-    this.slideInterval = setInterval(() => {
-      this.nextSlide();
-    }, 5000); // Change slide every 5 seconds
-  }
-
-  stopSlideshow(): void {
-    if (this.slideInterval) {
-      clearInterval(this.slideInterval);
-    }
-  }
-
-  nextSlide(): void {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.heroSlides.length;
-  }
-
-  prevSlide(): void {
-    this.currentSlideIndex = (this.currentSlideIndex - 1 + this.heroSlides.length) % this.heroSlides.length;
-  }
-
-  goToSlide(index: number): void {
-    this.currentSlideIndex = index;
-    // Reset interval when manually changing slides
-    this.stopSlideshow();
-    this.startSlideshow();
   }
 
   openServicesMenu(): void {    

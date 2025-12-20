@@ -1102,6 +1102,21 @@
   font-size: 0.95rem;
 }
 
+.contact-numbers {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-number-link {
+  color: #c0c0c0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-number-link:hover {
+  color: #ADFF2F;
+}
+
 .social-links {
   display: flex;
   gap: 1rem;

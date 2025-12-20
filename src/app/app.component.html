@@ -25,58 +25,133 @@
             <span class="toggle-icon" [class.rotated]="isServicesExpanded">+</span>
           </button>
           <ul class="submenu" [class.show]="isServicesExpanded">
-            <li class="submenu-item" [class.expanded]="expandedService === 'serviceA'">
-              <button class="submenu-link" (click)="toggleServiceSubmenu('serviceA', $event)">
+            <!-- 1. PPF -->
+            <li class="submenu-item" [class.expanded]="expandedService === 'ppf'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('ppf', $event)">
                 Paint Protection Film (PPF)
-                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceA'">+</span>
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'ppf'">+</span>
               </button>
-              <!-- Desktop only: inline subservices -->
-              <div class="subservices-container desktop-only" [class.show]="expandedService === 'serviceA'">
-                <a routerLink="/services/ppf" fragment="ceramic" class="nested-link">Ceramic Coating</a>
-                <a routerLink="/services/ppf" fragment="graphene" class="nested-link">Graphene Coating</a>
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'ppf'">
+                <a routerLink="/services/ppf" fragment="color" class="nested-link">Color PPF</a>
+                <a routerLink="/services/ppf" fragment="matte" class="nested-link">Matte PPF</a>
               </div>
             </li>
-            <li class="submenu-item" [class.expanded]="expandedService === 'serviceB'">
-              <button class="submenu-link" (click)="toggleServiceSubmenu('serviceB', $event)">
-                Car Wrapping
-                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceB'">+</span>
+            <!-- 2. Ceramic Coating -->
+            <li class="submenu-item" [class.expanded]="expandedService === 'ceramic'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('ceramic', $event)">
+                Ceramic Coating
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'ceramic'">+</span>
               </button>
-              <!-- Desktop only: inline subservices -->
-              <div class="subservices-container desktop-only" [class.show]="expandedService === 'serviceB'">
-                <a routerLink="/services/wrapping" fragment="matte" class="nested-link">Matte</a>
-                <a routerLink="/services/wrapping" fragment="gloss" class="nested-link">Gloss & Satin</a>
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'ceramic'">
+                <a routerLink="/services/ceramic" fragment="paint" class="nested-link">Paint / Exterior Coating</a>
+                <a routerLink="/services/ceramic" fragment="glass" class="nested-link">Glass Coating</a>
+                <a routerLink="/services/ceramic" fragment="wheel" class="nested-link">Wheel & Alloy Coating</a>
+                <a routerLink="/services/ceramic" fragment="caliper" class="nested-link">Brake Caliper Coating</a>
+                <a routerLink="/services/ceramic" fragment="trim" class="nested-link">Plastic & Trim Coating</a>
+                <a routerLink="/services/ceramic" fragment="lights" class="nested-link">Headlight & Taillight Coating</a>
+                <a routerLink="/services/ceramic" fragment="interior" class="nested-link">Interior Coating</a>
+              </div>
+            </li>
+            <!-- 3. Graphene Coating -->
+            <li class="submenu-item" [class.expanded]="expandedService === 'graphene'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('graphene', $event)">
+                Graphene Coating
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'graphene'">+</span>
+              </button>
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'graphene'">
+                <a routerLink="/services/graphene" fragment="exterior" class="nested-link">Full Exterior Coating</a>
+                <a routerLink="/services/graphene" fragment="glass" class="nested-link">Glass & Windshield Coating</a>
+                <a routerLink="/services/graphene" fragment="wheel" class="nested-link">Wheel & Alloy Coating</a>
+                <a routerLink="/services/graphene" fragment="caliper" class="nested-link">Brake Caliper Coating</a>
+                <a routerLink="/services/graphene" fragment="trim" class="nested-link">Plastic Trim & Cladding Coating</a>
+                <a routerLink="/services/graphene" fragment="lights" class="nested-link">Headlight & Taillight Protection</a>
+                <a routerLink="/services/graphene" fragment="interior" class="nested-link">Interior Coating</a>
+              </div>
+            </li>
+            <!-- 4. Car Wrapping -->
+            <li class="submenu-item" [class.expanded]="expandedService === 'wrapping'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('wrapping', $event)">
+                Car Wrapping
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'wrapping'">+</span>
+              </button>
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'wrapping'">
+                <a routerLink="/services/wrapping" fragment="gloss" class="nested-link">Gloss</a>
+                <a routerLink="/services/wrapping" fragment="matte" class="nested-link">Matte & Satin</a>
                 <a routerLink="/services/wrapping" fragment="custom" class="nested-link">Custom</a>
               </div>
             </li>
-            <li class="submenu-item" [class.expanded]="expandedService === 'serviceC'">
-              <button class="submenu-link" (click)="toggleServiceSubmenu('serviceC', $event)">
+            <!-- 5. Full Car Detailing -->
+            <li class="submenu-item" [class.expanded]="expandedService === 'detailing'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('detailing', $event)">
                 Full Car Detailing
-                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'serviceC'">+</span>
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'detailing'">+</span>
               </button>
-              <!-- Desktop only: inline subservices -->
-              <div class="subservices-container desktop-only" [class.show]="expandedService === 'serviceC'">
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'detailing'">
                 <a routerLink="/services/detailing" fragment="interior" class="nested-link">Interior Detailing</a>
                 <a routerLink="/services/detailing" fragment="engine" class="nested-link">Engine Bay Detailing</a>
                 <a routerLink="/services/detailing" fragment="headlight" class="nested-link">Headlight Restoration</a>
-                <a routerLink="/services/detailing" fragment="wheels" class="nested-link">Wheel & Caliper Coating</a>
+                <a routerLink="/services/detailing" fragment="alloy" class="nested-link">Alloy Wheel Coating</a>
+                <a routerLink="/services/detailing" fragment="underbody" class="nested-link">Underbody Cleaning</a>
+              </div>
+            </li>
+            <!-- 6. Sun Films -->
+            <li class="submenu-item">
+              <a routerLink="/services/sunfilms" class="submenu-link simple-link">Sun Films</a>
+            </li>
+            <!-- 7. Coding & Scanning -->
+            <li class="submenu-item" [class.expanded]="expandedService === 'coding'">
+              <button class="submenu-link" (click)="toggleServiceSubmenu('coding', $event)">
+                Coding & Scanning
+                <span class="nested-toggle-icon" [class.rotated]="expandedService === 'coding'">+</span>
+              </button>
+              <div class="subservices-container desktop-only" [class.show]="expandedService === 'coding'">
+                <a routerLink="/services/coding" fragment="diagnostic" class="nested-link">Diagnostic Scanning</a>
+                <a routerLink="/services/coding" fragment="errorcode" class="nested-link">Error Code Service</a>
+                <a routerLink="/services/coding" fragment="feature" class="nested-link">Vehicle Coding / Feature Activation</a>
+                <a routerLink="/services/coding" fragment="module" class="nested-link">Module Programming & Adaptations</a>
               </div>
             </li>
             <!-- Mobile only: shared subservices container at bottom -->
             <li class="mobile-subservices-container" [class.show]="expandedService">
-              @if (expandedService === 'serviceA') {
-                <a routerLink="/services/ppf" fragment="ceramic" class="nested-link">Ceramic Coating</a>
-                <a routerLink="/services/ppf" fragment="graphene" class="nested-link">Graphene Coating</a>
+              @if (expandedService === 'ppf') {
+                <a routerLink="/services/ppf" fragment="color" class="nested-link">Color PPF</a>
+                <a routerLink="/services/ppf" fragment="matte" class="nested-link">Matte PPF</a>
               }
-              @if (expandedService === 'serviceB') {
-                <a routerLink="/services/wrapping" fragment="matte" class="nested-link">Matte</a>
-                <a routerLink="/services/wrapping" fragment="gloss" class="nested-link">Gloss & Satin</a>
+              @if (expandedService === 'ceramic') {
+                <a routerLink="/services/ceramic" fragment="paint" class="nested-link">Paint / Exterior Coating</a>
+                <a routerLink="/services/ceramic" fragment="glass" class="nested-link">Glass Coating</a>
+                <a routerLink="/services/ceramic" fragment="wheel" class="nested-link">Wheel & Alloy Coating</a>
+                <a routerLink="/services/ceramic" fragment="caliper" class="nested-link">Brake Caliper Coating</a>
+                <a routerLink="/services/ceramic" fragment="trim" class="nested-link">Plastic & Trim Coating</a>
+                <a routerLink="/services/ceramic" fragment="lights" class="nested-link">Headlight & Taillight Coating</a>
+                <a routerLink="/services/ceramic" fragment="interior" class="nested-link">Interior Coating</a>
+              }
+              @if (expandedService === 'graphene') {
+                <a routerLink="/services/graphene" fragment="exterior" class="nested-link">Full Exterior Coating</a>
+                <a routerLink="/services/graphene" fragment="glass" class="nested-link">Glass & Windshield Coating</a>
+                <a routerLink="/services/graphene" fragment="wheel" class="nested-link">Wheel & Alloy Coating</a>
+                <a routerLink="/services/graphene" fragment="caliper" class="nested-link">Brake Caliper Coating</a>
+                <a routerLink="/services/graphene" fragment="trim" class="nested-link">Plastic Trim & Cladding Coating</a>
+                <a routerLink="/services/graphene" fragment="lights" class="nested-link">Headlight & Taillight Protection</a>
+                <a routerLink="/services/graphene" fragment="interior" class="nested-link">Interior Coating</a>
+              }
+              @if (expandedService === 'wrapping') {
+                <a routerLink="/services/wrapping" fragment="gloss" class="nested-link">Gloss</a>
+                <a routerLink="/services/wrapping" fragment="matte" class="nested-link">Matte & Satin</a>
                 <a routerLink="/services/wrapping" fragment="custom" class="nested-link">Custom</a>
               }
-              @if (expandedService === 'serviceC') {
+              @if (expandedService === 'detailing') {
                 <a routerLink="/services/detailing" fragment="interior" class="nested-link">Interior Detailing</a>
                 <a routerLink="/services/detailing" fragment="engine" class="nested-link">Engine Bay Detailing</a>
                 <a routerLink="/services/detailing" fragment="headlight" class="nested-link">Headlight Restoration</a>
-                <a routerLink="/services/detailing" fragment="wheels" class="nested-link">Wheel & Caliper Coating</a>
+                <a routerLink="/services/detailing" fragment="alloy" class="nested-link">Alloy Wheel Coating</a>
+                <a routerLink="/services/detailing" fragment="underbody" class="nested-link">Underbody Cleaning</a>
+              }
+              @if (expandedService === 'coding') {
+                <a routerLink="/services/coding" fragment="diagnostic" class="nested-link">Diagnostic Scanning</a>
+                <a routerLink="/services/coding" fragment="errorcode" class="nested-link">Error Code Service</a>
+                <a routerLink="/services/coding" fragment="feature" class="nested-link">Vehicle Coding / Feature Activation</a>
+                <a routerLink="/services/coding" fragment="module" class="nested-link">Module Programming & Adaptations</a>
               }
             </li>
           </ul>
@@ -113,10 +188,13 @@
       <div class="footer-contact">
         <h3 class="footer-title">Get In Touch</h3>
         <div class="contact-info">
-          <a href="tel:+919876543210" class="contact-item">
+          <div class="contact-item">
             <span class="contact-icon">📞</span>
-            <span class="contact-text">+91 98765 43210</span>
-          </a>
+            <div class="contact-numbers">
+              <a href="tel:+919029999651" class="contact-text contact-number-link">+91 9029999651</a>
+              <a href="tel:+917977058091" class="contact-text contact-number-link">+91 7977058091</a>
+            </div>
+          </div>
           <a href="mailto:info@edgecustoms.in" class="contact-item">
             <span class="contact-icon">✉️</span>
             <span class="contact-text">info&#64;edgecustoms.in</span>
@@ -127,14 +205,14 @@
           </div>
         </div>
         <div class="social-links">
-          <a href="#" class="social-link" aria-label="Instagram">
+          <a href="https://www.instagram.com/edgecustoms.in?igsh=MWR5a21ubXdvcm0waQ%3D%3D&utm_source=qr" class="social-link" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
           <a href="#" class="social-link" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-          <a href="#" class="social-link" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <a href="https://wa.me/919029999651" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.099-.47-.149-.669.198-.199.346-.769.967-.943 1.166-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.151-.174.2-.298.3-.496.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.505 2.193.96 2.64 1.701 3.655 4.092.83 2.025 1.353 3.167.3 3.167-.78 1.832 2.146 1.832 3.666 3.072 6.59-.074.298-.272.571-.57.72-.297.149-.569.248-.768.347z"/></svg>
           </a>
         </div>
       </div>

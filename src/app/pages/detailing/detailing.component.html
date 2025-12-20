@@ -9,7 +9,7 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay muted loop playsinline class="service-video">
+    <video autoplay [muted]="true" loop playsinline class="service-video">
       <source src="/assets/mechanic-desktop-compressed.mp4" type="video/mp4">
     </video>
     <div class="media-overlay"></div>
@@ -43,19 +43,6 @@
           </ul>
         </div>
 
-        <!-- Full Car Detailing -->
-        <div class="package-card featured">
-          <div class="package-badge">Complete Care</div>
-          <h3 class="package-name">Full Car Detailing</h3>
-          <p class="package-desc">Complete inside-out rejuvenation. Restores your vehicle's appearance to near-new condition by addressing both exterior and interior surfaces.</p>
-          <ul class="package-features">
-            <li><strong>Exterior:</strong> Foam wash & decontamination</li>
-            <li>Paint correction & polishing</li>
-            <li>Protection application (sealant/coating)</li>
-            <li><strong>Interior:</strong> Deep cleaning & conditioning</li>
-          </ul>
-        </div>
-
         <!-- Engine Bay Detailing -->
         <div class="package-card" id="engine">
           <h3 class="package-name">Engine Bay Detailing</h3>
@@ -69,7 +56,8 @@
         </div>
 
         <!-- Headlight Restoration -->
-        <div class="package-card" id="headlight">
+        <div class="package-card featured" id="headlight">
+          <div class="package-badge">Popular</div>
           <h3 class="package-name">Headlight Restoration</h3>
           <p class="package-desc">Clear vision, enhanced safety. Our restoration process removes haze and restores clarity to oxidized headlights.</p>
           <ul class="package-features">
@@ -80,15 +68,27 @@
           </ul>
         </div>
 
-        <!-- Wheel & Caliper Coating -->
-        <div class="package-card" id="wheels">
-          <h3 class="package-name">Wheel & Caliper Coating</h3>
-          <p class="package-desc">Protection where it matters most. High-temperature resistant coatings protect against brake dust and corrosion.</p>
+        <!-- Alloy Wheel Coating -->
+        <div class="package-card" id="alloy">
+          <h3 class="package-name">Alloy Wheel Coating</h3>
+          <p class="package-desc">Protect your alloys with high-temperature resistant coatings that repel brake dust and prevent corrosion.</p>
           <ul class="package-features">
             <li>High-temp resistant coating</li>
             <li>Repels brake dust & grime</li>
             <li>Prevents corrosion</li>
             <li>Easy maintenance cleaning</li>
+          </ul>
+        </div>
+
+        <!-- Underbody Cleaning -->
+        <div class="package-card" id="underbody">
+          <h3 class="package-name">Underbody Cleaning</h3>
+          <p class="package-desc">Thorough cleaning of your vehicle's underbody to remove salt, mud, and debris that cause corrosion.</p>
+          <ul class="package-features">
+            <li>Removes salt & road grime</li>
+            <li>Prevents rust & corrosion</li>
+            <li>Extends vehicle lifespan</li>
+            <li>Professional-grade equipment</li>
           </ul>
         </div>
       </div>

@@ -19,11 +19,19 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   // Hero carousel
   heroSlides: HeroSlide[] = [
     {
-      image: 'mechanic-hero.png',
+      image: 'mechanic-coding-car.png',
       taglines: [
-        { text: 'BUILD.', color: 'green' },
-        { text: 'DRIVE.', color: 'white' },
-        { text: 'REPEAT.', color: 'green' }
+        { text: 'DIAGNOSE.', color: 'green' },
+        { text: 'CONFIGURE.', color: 'white' },
+        { text: 'UNLOCK.', color: 'green' }
+      ]
+    },
+    {
+      image: 'ceramic-coating-detail.png',
+      taglines: [
+        { text: 'SHIELD.', color: 'green' },
+        { text: 'SHINE.', color: 'white' },
+        { text: 'SECURE.', color: 'green' }
       ]
     },
     {

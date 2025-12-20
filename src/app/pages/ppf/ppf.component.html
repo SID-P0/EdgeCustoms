@@ -9,8 +9,8 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay muted loop playsinline class="service-video">
-      <source src="/assets/mechanic-desktop-compressed.mp4" type="video/mp4">
+    <video autoplay [muted]="true" loop playsinline class="service-video">
+      <source src="/assets/ppf_application.mp4" type="video/mp4" >
     </video>
     <div class="media-overlay"></div>
   </div>
@@ -29,37 +29,33 @@
 
   <section class="service-packages">
     <div class="container">
-      <h2 class="section-title">Our PPF Coatings</h2>
+      <h2 class="section-title">Our PPF Options</h2>
       <div class="packages-grid">
-        <div class="package-card" id="ceramic">
-          <h3 class="package-name">Ceramic Coating</h3>
-          <p class="package-desc">Ceramic Coating
-            Long-lasting shine with superior protection
-            Ceramic coating is a liquid polymer applied to your vehicle’s paint
-            that bonds at a molecular level, creating a durable protective layer. It
-            enhances gloss while protecting against environmental contaminants.</p>
+        <div class="package-card" id="color">
+          <h3 class="package-name">Color PPF</h3>
+          <p class="package-desc">Transform and protect your vehicle with vibrant Color PPF. 
+            Available in a wide range of colors and finishes, Color PPF allows you to 
+            change the appearance of your vehicle while providing superior protection 
+            against scratches, chips, and UV damage.</p>
           <ul class="package-features">
-            <li>Daily driven vehicles</li>
-            <li>Preserving showroom finish</li>
-            <li>Deep, mirror-like gloss</li>
-            <li>Hydrophobic surface for easy cleaning</li>
-            <li>UV, chemical & oxidation resistance</li>
-            <li>Reduces swirl marks and light scratches</li>
-            <li>Long-term protection compared to wax</li>
+            <li>Wide range of color options</li>
+            <li>Self-healing technology</li>
+            <li>UV protection</li>
+            <li>Stone chip resistance</li>
           </ul>
         </div>
-        <div class="package-card featured" id="graphene">
+        <div class="package-card featured" id="matte">
           <div class="package-badge">Most Popular</div>
-          <h3 class="package-name">Graphene Coating</h3>
-          <p class="package-desc">Graphene coating offers enhanced durability and thermal resistance
-            compared to traditional ceramic coatings. It provides a richer gloss
-            and longer lifespan, making it ideal for high-performance and luxury
-            vehicles.</p>
+          <h3 class="package-name">Matte PPF</h3>
+          <p class="package-desc">Achieve a stunning satin or matte finish with our premium 
+            Matte PPF. Perfect for luxury and sports vehicles, this film provides the 
+            sophisticated matte look while offering the same level of protection as 
+            traditional clear PPF.</p>
           <ul class="package-features">
-            <li>Superior heat & chemical resistance</li>
-            <li>Reduced water spotting</li>
-            <li>Enhanced durability and longevity</li>
-            <li>Ultra-smooth finish with deep gloss</li>
+            <li>Satin/matte finish</li>
+            <li>Self-healing properties</li>
+            <li>Anti-fingerprint coating</li>
+            <li>Preserves factory matte paint</li>
           </ul>
         </div>
       </div>
