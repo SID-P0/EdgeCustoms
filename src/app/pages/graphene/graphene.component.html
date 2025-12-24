@@ -9,8 +9,8 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay [muted]="true" loop playsinline class="service-video">
-      <source src="/assets/coating.mp4" type="video/mp4">
+    <video #serviceVideo autoplay [muted]="true" loop playsinline class="service-video">
+      <source [src]="currentVideo" type="video/mp4">
     </video>
     <div class="media-overlay"></div>
   </div>
@@ -30,7 +30,7 @@
     <div class="container">
       <h2 class="section-title">Our Graphene Coating Services</h2>
       <div class="packages-grid">
-        <div class="package-card featured" id="exterior">
+        <div class="package-card featured" id="exterior" (click)="scrollToVideo('exterior')" style="cursor: pointer;">
           <div class="package-badge">Premium</div>
           <h3 class="package-name">Full Exterior Coating</h3>
           <p class="package-desc">Complete graphene protection for your vehicle's exterior paint, offering unmatched durability and a stunning mirror finish.</p>
@@ -41,7 +41,7 @@
             <li>7+ years durability</li>
           </ul>
         </div>
-        <div class="package-card" id="glass">
+        <div class="package-card" id="glass" (click)="scrollToVideo('glass')" style="cursor: pointer;">
           <h3 class="package-name">Glass & Windshield Coating</h3>
           <p class="package-desc">Graphene protection for all glass surfaces, providing extreme water repellency and improved visibility.</p>
           <ul class="package-features">
@@ -51,7 +51,7 @@
             <li>3+ years durability</li>
           </ul>
         </div>
-        <div class="package-card" id="wheel">
+        <div class="package-card" id="wheel" (click)="scrollToVideo('wheel')" style="cursor: pointer;">
           <h3 class="package-name">Wheel & Alloy Coating</h3>
           <p class="package-desc">High-performance graphene coating for wheels with exceptional heat dissipation and brake dust resistance.</p>
           <ul class="package-features">
@@ -61,7 +61,7 @@
             <li>5+ years durability</li>
           </ul>
         </div>
-        <div class="package-card" id="caliper">
+        <div class="package-card" id="caliper" (click)="scrollToVideo('caliper')" style="cursor: pointer;">
           <h3 class="package-name">Brake Caliper Coating</h3>
           <p class="package-desc">Graphene-infused coating for brake calipers, providing extreme heat resistance and a lasting showroom finish.</p>
           <ul class="package-features">
@@ -71,7 +71,7 @@
             <li>Long-lasting appearance</li>
           </ul>
         </div>
-        <div class="package-card" id="trim">
+        <div class="package-card" id="trim" (click)="scrollToVideo('trim')" style="cursor: pointer;">
           <h3 class="package-name">Plastic Trim & Cladding Coating</h3>
           <p class="package-desc">Graphene restoration and protection for all exterior plastic trim and cladding, with superior UV resistance.</p>
           <ul class="package-features">
@@ -81,7 +81,7 @@
             <li>4+ years durability</li>
           </ul>
         </div>
-        <div class="package-card" id="lights">
+        <div class="package-card" id="lights" (click)="scrollToVideo('lights')" style="cursor: pointer;">
           <h3 class="package-name">Headlight & Taillight Protection</h3>
           <p class="package-desc">Graphene coating for headlights and taillights, offering crystal clarity and prevention of oxidation.</p>
           <ul class="package-features">
@@ -91,7 +91,7 @@
             <li>Long-lasting protection</li>
           </ul>
         </div>
-        <div class="package-card" id="interior">
+        <div class="package-card" id="interior" (click)="scrollToVideo('interior')" style="cursor: pointer;">
           <h3 class="package-name">Interior Coating</h3>
           <p class="package-desc">Graphene protection for leather, fabric, and interior plastics, providing exceptional stain resistance and durability.</p>
           <ul class="package-features">

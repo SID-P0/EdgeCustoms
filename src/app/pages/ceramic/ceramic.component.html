@@ -9,8 +9,8 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay muted loop playsinline class="service-video">
-      <source src="/assets/coating.mp4" type="video/mp4">
+    <video #serviceVideo autoplay [muted]="true" loop playsinline class="service-video">
+      <source [src]="currentVideo" type="video/mp4">
     </video>
     <div class="media-overlay"></div>
   </div>
@@ -30,7 +30,7 @@
     <div class="container">
       <h2 class="section-title">Our Ceramic Coating Services</h2>
       <div class="packages-grid">
-        <div class="package-card" id="paint">
+        <div class="package-card" id="paint" (click)="scrollToVideo('paint')" style="cursor: pointer;">
           <h3 class="package-name">Paint / Exterior Coating</h3>
           <p class="package-desc">Full exterior ceramic protection for your vehicle's paint, providing long-lasting shine and protection against the elements.</p>
           <ul class="package-features">
@@ -40,7 +40,7 @@
             <li>5+ years durability</li>
           </ul>
         </div>
-        <div class="package-card featured" id="glass">
+        <div class="package-card featured" id="glass" (click)="scrollToVideo('glass')" style="cursor: pointer;">
           <div class="package-badge">Popular</div>
           <h3 class="package-name">Glass Coating</h3>
           <p class="package-desc">Ceramic protection for windscreen and windows, improving visibility and reducing the need for wipers in rain.</p>
@@ -51,7 +51,7 @@
             <li>2+ years durability</li>
           </ul>
         </div>
-        <div class="package-card" id="wheel">
+        <div class="package-card" id="wheel" (click)="scrollToVideo('wheel')" style="cursor: pointer;">
           <h3 class="package-name">Wheel & Alloy Coating</h3>
           <p class="package-desc">High-temperature ceramic coating for wheels that resists brake dust, grime, and makes cleaning effortless.</p>
           <ul class="package-features">
@@ -61,7 +61,7 @@
             <li>3+ years durability</li>
           </ul>
         </div>
-        <div class="package-card" id="caliper">
+        <div class="package-card" id="caliper" (click)="scrollToVideo('caliper')" style="cursor: pointer;">
           <h3 class="package-name">Brake Caliper Coating</h3>
           <p class="package-desc">Specialized ceramic coating for brake calipers that withstands extreme heat and preserves their appearance.</p>
           <ul class="package-features">
@@ -71,7 +71,7 @@
             <li>Long-lasting finish</li>
           </ul>
         </div>
-        <div class="package-card" id="trim">
+        <div class="package-card" id="trim" (click)="scrollToVideo('trim')" style="cursor: pointer;">
           <h3 class="package-name">Plastic & Trim Coating</h3>
           <p class="package-desc">Restores and protects exterior plastic trim, preventing fading and maintaining a fresh, black appearance.</p>
           <ul class="package-features">
@@ -81,7 +81,7 @@
             <li>2+ years durability</li>
           </ul>
         </div>
-        <div class="package-card" id="lights">
+        <div class="package-card" id="lights" (click)="scrollToVideo('lights')" style="cursor: pointer;">
           <h3 class="package-name">Headlight & Taillight Coating</h3>
           <p class="package-desc">Ceramic protection for headlights and taillights, preventing yellowing and enhancing clarity.</p>
           <ul class="package-features">
@@ -91,7 +91,7 @@
             <li>Long-lasting clarity</li>
           </ul>
         </div>
-        <div class="package-card" id="interior">
+        <div class="package-card" id="interior" (click)="scrollToVideo('interior')" style="cursor: pointer;">
           <h3 class="package-name">Interior Coating</h3>
           <p class="package-desc">Ceramic protection for leather, fabric, and plastic interior surfaces, making them stain-resistant and easy to clean.</p>
           <ul class="package-features">

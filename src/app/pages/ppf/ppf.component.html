@@ -9,8 +9,8 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay [muted]="true" loop playsinline class="service-video">
-      <source src="/assets/ppf_application.mp4" type="video/mp4" >
+    <video #serviceVideo autoplay [muted]="true" loop playsinline class="service-video">
+      <source [src]="currentVideo" type="video/mp4">
     </video>
     <div class="media-overlay"></div>
   </div>
@@ -31,7 +31,7 @@
     <div class="container">
       <h2 class="section-title">Our PPF Options</h2>
       <div class="packages-grid">
-        <div class="package-card" id="color">
+        <div class="package-card" id="color" (click)="scrollToVideo('color')" style="cursor: pointer;">
           <h3 class="package-name">Color PPF</h3>
           <p class="package-desc">Transform and protect your vehicle with vibrant Color PPF. 
             Available in a wide range of colors and finishes, Color PPF allows you to 
@@ -44,7 +44,7 @@
             <li>Stone chip resistance</li>
           </ul>
         </div>
-        <div class="package-card featured" id="matte">
+        <div class="package-card featured" id="matte" (click)="scrollToVideo('matte')" style="cursor: pointer;">
           <div class="package-badge">Most Popular</div>
           <h3 class="package-name">Matte PPF</h3>
           <p class="package-desc">Achieve a stunning satin or matte finish with our premium 

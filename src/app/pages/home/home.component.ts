@@ -37,9 +37,9 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       image: 'carousel-ppf.png',
       taglines: [
-        { text: 'PROTECT.', color: 'green' },
-        { text: 'PRESERVE.', color: 'white' },
-        { text: 'PERFECT.', color: 'green' }
+        { text: 'INVISIBLE.', color: 'green' },
+        { text: 'ARMOR.', color: 'white' },
+        { text: 'ALWAYS', color: 'green' }
       ]
     },
     {
@@ -53,9 +53,9 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       image: 'carousel-detailing.png',
       taglines: [
-        { text: 'DETAIL.', color: 'green' },
-        { text: 'SHINE.', color: 'white' },
-        { text: 'IMPRESS.', color: 'green' }
+        { text: 'REFINED.', color: 'green' },
+        { text: 'RESTORE.', color: 'white' },
+        { text: 'RADIANT.', color: 'green' }
       ]
     },
   ];

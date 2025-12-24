@@ -9,8 +9,8 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay [muted]="true" loop playsinline class="service-video">
-      <source src="/assets/mechanic-desktop-compressed.mp4" type="video/mp4">
+    <video #serviceVideo autoplay [muted]="true" loop playsinline class="service-video">
+      <source [src]="currentVideo" type="video/mp4">
     </video>
     <div class="media-overlay"></div>
   </div>
@@ -32,7 +32,7 @@
       <h2 class="section-title">Detailing Packages</h2>
       <div class="packages-grid">
         <!-- Interior Detailing -->
-        <div class="package-card" id="interior">
+        <div class="package-card" id="interior" (click)="scrollToVideo('interior')" style="cursor: pointer;">
           <h3 class="package-name">Interior Detailing</h3>
           <p class="package-desc">Deep clean and restore your vehicle's interior. We meticulously clean every nook and cranny.</p>
           <ul class="package-features">
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Engine Bay Detailing -->
-        <div class="package-card" id="engine">
+        <div class="package-card" id="engine" (click)="scrollToVideo('engine')" style="cursor: pointer;">
           <h3 class="package-name">Engine Bay Detailing</h3>
           <p class="package-desc">Clean, safe & showroom-ready engine bay. We carefully clean and dress the engine bay to improve aesthetics without compromising safety.</p>
           <ul class="package-features">
@@ -56,7 +56,7 @@
         </div>
 
         <!-- Headlight Restoration -->
-        <div class="package-card featured" id="headlight">
+        <div class="package-card featured" id="headlight" (click)="scrollToVideo('headlight')" style="cursor: pointer;">
           <div class="package-badge">Popular</div>
           <h3 class="package-name">Headlight Restoration</h3>
           <p class="package-desc">Clear vision, enhanced safety. Our restoration process removes haze and restores clarity to oxidized headlights.</p>
@@ -69,7 +69,7 @@
         </div>
 
         <!-- Alloy Wheel Coating -->
-        <div class="package-card" id="alloy">
+        <div class="package-card" id="alloy" (click)="scrollToVideo('alloy')" style="cursor: pointer;">
           <h3 class="package-name">Alloy Wheel Coating</h3>
           <p class="package-desc">Protect your alloys with high-temperature resistant coatings that repel brake dust and prevent corrosion.</p>
           <ul class="package-features">
@@ -81,7 +81,7 @@
         </div>
 
         <!-- Underbody Cleaning -->
-        <div class="package-card" id="underbody">
+        <div class="package-card" id="underbody" (click)="scrollToVideo('underbody')" style="cursor: pointer;">
           <h3 class="package-name">Underbody Cleaning</h3>
           <p class="package-desc">Thorough cleaning of your vehicle's underbody to remove salt, mud, and debris that cause corrosion.</p>
           <ul class="package-features">

@@ -9,8 +9,8 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay muted loop playsinline class="service-video">
-      <source src="/assets/mechanic-desktop-compressed.mp4" type="video/mp4">
+    <video #serviceVideo autoplay [muted]="true" loop playsinline class="service-video">
+      <source [src]="currentVideo" type="video/mp4">
     </video>
     <div class="media-overlay"></div>
   </div>
@@ -31,7 +31,7 @@
       <h2 class="section-title">Our Coding & Scanning Services</h2>
       <div class="packages-grid">
         <!-- Diagnostic Scanning -->
-        <div class="package-card" id="diagnostic">
+        <div class="package-card" id="diagnostic" (click)="scrollToVideo('diagnostic')" style="cursor: pointer;">
           <h3 class="package-name">Diagnostic Scanning</h3>
           <p class="package-desc">Comprehensive system health check to identify issues before they become problems.</p>
           <ul class="package-features">
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Error Code Service -->
-        <div class="package-card" id="errorcode">
+        <div class="package-card" id="errorcode" (click)="scrollToVideo('errorcode')" style="cursor: pointer;">
           <h3 class="package-name">Error Code Service</h3>
           <p class="package-desc">Expert analysis and resolution of error codes and warning lights.</p>
           <ul class="package-features">
@@ -56,7 +56,7 @@
         </div>
 
         <!-- Vehicle Coding / Feature Activation -->
-        <div class="package-card featured" id="feature">
+        <div class="package-card featured" id="feature" (click)="scrollToVideo('feature')" style="cursor: pointer;">
           <div class="package-badge">Popular</div>
           <h3 class="package-name">Vehicle Coding / Feature Activation</h3>
           <p class="package-desc">Unlock hidden features and customize your vehicle's behavior. Options depend on brand & model.</p>
@@ -75,7 +75,7 @@
         </div>
 
         <!-- Module Programming & Adaptations -->
-        <div class="package-card" id="module">
+        <div class="package-card" id="module" (click)="scrollToVideo('module')" style="cursor: pointer;">
           <h3 class="package-name">Module Programming & Adaptations</h3>
           <p class="package-desc">Professional calibration and adaptation services for critical vehicle systems.</p>
           <ul class="package-features">

@@ -9,8 +9,8 @@
   </div>
 
   <div class="service-video-container">
-    <video autoplay [muted]="true" loop playsinline class="service-video">
-      <source src="/assets/mechanic-desktop-compressed.mp4" type="video/mp4">
+    <video #serviceVideo autoplay [muted]="true" loop playsinline class="service-video">
+      <source [src]="currentVideo" type="video/mp4">
     </video>
     <div class="media-overlay"></div>
   </div>
@@ -30,7 +30,7 @@
     <div class="container">
       <h2 class="section-title">Benefits of Sun Films</h2>
       <div class="packages-grid">
-        <div class="package-card">
+        <div class="package-card" id="uv" (click)="scrollToVideo('uv')" style="cursor: pointer;">
           <h3 class="package-name">UV Protection</h3>
           <p class="package-desc">Block up to 99% of harmful UV rays that can damage your skin and fade your vehicle's interior.</p>
           <ul class="package-features">
@@ -40,7 +40,7 @@
             <li>Extends interior lifespan</li>
           </ul>
         </div>
-        <div class="package-card featured">
+        <div class="package-card featured" id="heat" (click)="scrollToVideo('heat')" style="cursor: pointer;">
           <h3 class="package-name">Heat Rejection</h3>
           <p class="package-desc">Keep your car cooler with advanced heat rejection technology that reduces cabin temperature significantly.</p>
           <ul class="package-features">
@@ -50,7 +50,7 @@
             <li>Comfortable driving</li>
           </ul>
         </div>
-        <div class="package-card">
+        <div class="package-card" id="privacy" (click)="scrollToVideo('privacy')" style="cursor: pointer;">
           <h3 class="package-name">Privacy & Security</h3>
           <p class="package-desc">Enhanced privacy for you and your belongings, with added security from shatter-resistant film.</p>
           <ul class="package-features">
