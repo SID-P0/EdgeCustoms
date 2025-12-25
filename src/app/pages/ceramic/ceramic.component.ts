@@ -1,9 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-ceramic',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './ceramic.component.html',
   styleUrl: './ceramic.component.css'
 })
@@ -12,6 +13,7 @@ export class CeramicComponent {
 
   defaultVideo = '/assets/compressed/ceramicCoating-compressed.mp4';
   currentVideo = this.defaultVideo;
+  isVideoLoading = true;
 
   // Map card IDs to their specific video paths
   videoMap: { [key: string]: string | undefined } = {
@@ -31,6 +33,7 @@ export class CeramicComponent {
   scrollToVideo(cardId?: string): void {
     if (cardId && this.videoMap[cardId]) {
       this.currentVideo = this.videoMap[cardId]!;
+      this.isVideoLoading = true;
       setTimeout(() => {
         if (this.serviceVideo?.nativeElement) {
           this.serviceVideo.nativeElement.load();
@@ -45,4 +48,17 @@ export class CeramicComponent {
       serviceHero.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
+
+  onVideoLoaded(): void {
+    this.isVideoLoading = false;
+  }
+
+  onVideoWaiting(): void {
+    this.isVideoLoading = true;
+  }
+
+  onVideoPlaying(): void {
+    this.isVideoLoading = false;
+  }
 }
+

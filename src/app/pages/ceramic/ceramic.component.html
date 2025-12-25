@@ -9,7 +9,22 @@
   </div>
 
   <div class="service-video-container">
-    <video #serviceVideo autoplay [muted]="true" loop playsinline class="service-video">
+    <!-- Video Loading Spinner -->
+    <div class="video-loader" *ngIf="isVideoLoading">
+      <div class="spinner"></div>
+      <span class="loader-text">Loading...</span>
+    </div>
+    <video #serviceVideo 
+           autoplay 
+           [muted]="true" 
+           loop 
+           playsinline 
+           preload="metadata"
+           class="service-video"
+           [class.loaded]="!isVideoLoading"
+           (loadeddata)="onVideoLoaded()"
+           (waiting)="onVideoWaiting()"
+           (playing)="onVideoPlaying()">
       <source [src]="currentVideo" type="video/mp4">
     </video>
     <div class="media-overlay"></div>

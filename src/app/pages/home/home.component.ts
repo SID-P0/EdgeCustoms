@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { UiService } from '../../services/ui.service';
 import { RouterLink } from '@angular/router';
 
@@ -9,12 +10,15 @@ interface HeroSlide {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('mechanicVideo') mechanicVideo!: ElementRef<HTMLVideoElement>;
+  
+  // Video loading state
+  isVideoLoading = true;
 
   // Hero carousel
   heroSlides: HeroSlide[] = [
@@ -98,5 +102,18 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   openServicesMenu(): void {
     this.uiService.triggerOpenServices();
+  }
+
+  // Video loading event handlers
+  onVideoLoaded(): void {
+    this.isVideoLoading = false;
+  }
+
+  onVideoWaiting(): void {
+    this.isVideoLoading = true;
+  }
+
+  onVideoPlaying(): void {
+    this.isVideoLoading = false;
   }
 }

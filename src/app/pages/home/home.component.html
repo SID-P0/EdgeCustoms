@@ -18,7 +18,22 @@
 <section id="about" class="mechanic-info-section">
   <div class="mechanic-info-box">
     <div class="mechanic-media-container">
-      <video #mechanicVideo autoplay muted loop playsinline class="mechanic-video">
+      <!-- Video Loading Spinner -->
+      <div class="video-loader" *ngIf="isVideoLoading">
+        <div class="spinner"></div>
+        <span class="loader-text">Loading...</span>
+      </div>
+      <video #mechanicVideo 
+             autoplay 
+             muted 
+             loop 
+             playsinline 
+             preload="metadata"
+             class="mechanic-video"
+             [class.loaded]="!isVideoLoading"
+             (loadeddata)="onVideoLoaded()"
+             (waiting)="onVideoWaiting()"
+             (playing)="onVideoPlaying()">
         <source src="/assets/compressed/homeVideo-compressed.mp4" type="video/mp4">
       </video>
       <img src="mechanic-hero.png" class="mechanic-image fallback" alt="Mechanic at work">
