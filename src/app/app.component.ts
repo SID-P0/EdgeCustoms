@@ -85,17 +85,37 @@ export class AppComponent implements OnInit {
   }
 
   private scrollToFragment(fragment: string): void {
-    const element = document.getElementById(fragment);
-    if (element) {
-      const headerOffset = 180;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+    // Close mobile menu first if open
+    if (this.isMobileMenuOpen) {
+      this.isMobileMenuOpen = false;
+      this.isServicesExpanded = false;
+      this.expandedService = null;
     }
+
+    // Small delay to allow mobile menu to close before scrolling
+    setTimeout(() => {
+      // Special handling for contact fragment on mobile - scroll to bottom
+      if (fragment === 'contact' && window.innerWidth <= 900) {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: 'smooth'
+        });
+      } else {
+        // Standard fragment scrolling for desktop and other fragments
+        // formatting few offset above to match the angle
+        const element = document.getElementById(fragment);
+        if (element) {
+          const headerOffset = 180;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }, 50);
   }
 
   openServicesMenu(): void {    
